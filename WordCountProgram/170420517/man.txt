@@ -1,0 +1,20 @@
+Derleme: gcc ks.c -o ks
+Kullanım: ./ks [Parameters] [file.txt]
+
+Program: adlarini aldigi text dosyalarının satir kelime ve harf sayisini sayar.
+
+Parametreler: herhangi bir txt dosyasi, -l , -w, -c, +
+-l : line anlamina gelir sadece satirlari sayar.
+-w : word anlamina gelir sadece kelimeleri sayar.
+-c : character anlamina gelir sadece harfleri sayar.
++  : dosya adini stdin'den okur. Kullanimi için cat stdin.txt | ./ks B.txt + 
+
+Ornek kullanimlar:
+./ks B.txt c_dickens.txt random.txt
+./ks B.txt c_dickens.txt -l
+./ks random.txt c_dickens.txt -lw
+cat stdin.txt|./ks
+
+
+Mehmed Emirhan Amaç
+170420517
