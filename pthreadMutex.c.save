@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <stdio.h>
+#include <unistd.h>
+
+pthread_mutex_t mutex;//PTHREAD_MUTEX_INITIALIZER;
+int shared_data=1;
+int buffer[5];
+
+void *consumer(){
+	for(int i=0;i<30;i++){
+ 	pthread_mutex_lock(&mutex);
+	//shared_data--;
+	printf("Consumer kullandı: %d\n",shared_data);;
+	pthread_mutex_unlock(&mutex);
+	}
+	printf("Consumerden cıkan: %d\n",shared_data);
+}
+
+void *producer()
+	{
+        int item=rand();
+	buffer[]
+        pthread_mutex_lock(&mutex);
+        shared_data++;
+        printf("Producer: %d\n",shared_data);
+        pthread_mutex_unlock(&mutex);
+        
+        printf("Producerdan cıkan: %d\n",shared_data);
+}
+
+
+int main(){
+	pthread_t thread1;
+	pthread_t thread2;
+	pthread_mutex_init(&mutex,NULL);
+	pthread_create(&thread2,NULL,producer,NULL);
+	pthread_create(&thread1,NULL,consumer,NULL);
+	void *thread_result;
+	pthread_join(thread1,&thread_result);
+	pthread_join(thread2,&thread_result);
+	return 0;
+}
