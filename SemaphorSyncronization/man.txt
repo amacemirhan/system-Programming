@@ -1,0 +1,5 @@
+Purpose of the project:	Synchronize 6 threds with semaphores
+Compile: 			gcc baklava.c -o baklava -lpthread
+Run:				./baklava
+Requirements:			malzemeler.txt
+Author:			github.com/amacemirhan
